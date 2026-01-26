@@ -1,0 +1,201 @@
+{
+  "info": {
+    "name": "Stock Market Platform API",
+    "description": "Collection for Stock Market Data Platform APIs",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Companies",
+      "item": [
+        {
+          "name": "List All Companies",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/api/companies",
+              "host": ["{{BASE_URL}}"],
+              "path": ["api", "companies"]
+            },
+            "description": "Get list of all available companies"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Stock Data",
+      "item": [
+        {
+          "name": "Get Stock Data",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/api/stock/INFY?days=30",
+              "host": ["{{BASE_URL}}"],
+              "path": ["api", "stock", "INFY"],
+              "query": [
+                {
+                  "key": "days",
+                  "value": "30"
+                }
+              ]
+            },
+            "description": "Get stock data for specified ticker"
+          }
+        },
+        {
+          "name": "Get Stock Summary",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/api/summary/INFY",
+              "host": ["{{BASE_URL}}"],
+              "path": ["api", "summary", "INFY"]
+            },
+            "description": "Get summary statistics for a stock"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Comparison",
+      "item": [
+        {
+          "name": "Compare Two Stocks",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/api/compare?ticker1=INFY&ticker2=TCS&days=30",
+              "host": ["{{BASE_URL}}"],
+              "path": ["api", "compare"],
+              "query": [
+                {
+                  "key": "ticker1",
+                  "value": "INFY"
+                },
+                {
+                  "key": "ticker2",
+                  "value": "TCS"
+                },
+                {
+                  "key": "days",
+                  "value": "30"
+                }
+              ]
+            },
+            "description": "Compare two stocks with correlation analysis"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Rankings",
+      "item": [
+        {
+          "name": "Top Gainers",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/api/top-gainers?days=7",
+              "host": ["{{BASE_URL}}"],
+              "path": ["api", "top-gainers"],
+              "query": [
+                {
+                  "key": "days",
+                  "value": "7"
+                }
+              ]
+            },
+            "description": "Get top gaining stocks"
+          }
+        },
+        {
+          "name": "Top Losers",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/api/top-losers?days=7",
+              "host": ["{{BASE_URL}}"],
+              "path": ["api", "top-losers"],
+              "query": [
+                {
+                  "key": "days",
+                  "value": "7"
+                }
+              ]
+            },
+            "description": "Get top losing stocks"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Analytics",
+      "item": [
+        {
+          "name": "Get Volatility Metrics",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/api/volatility/INFY?days=30",
+              "host": ["{{BASE_URL}}"],
+              "path": ["api", "volatility", "INFY"],
+              "query": [
+                {
+                  "key": "days",
+                  "value": "30"
+                }
+              ]
+            },
+            "description": "Get creative volatility metrics for a stock"
+          }
+        }
+      ]
+    },
+    {
+      "name": "System",
+      "item": [
+        {
+          "name": "Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/api/health",
+              "host": ["{{BASE_URL}}"],
+              "path": ["api", "health"]
+            },
+            "description": "Check API health status"
+          }
+        },
+        {
+          "name": "API Info",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/",
+              "host": ["{{BASE_URL}}"],
+              "path": [""]
+            },
+            "description": "Get API information"
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "BASE_URL",
+      "value": "http://localhost:8000",
+      "type": "string"
+    }
+  ]
+}
