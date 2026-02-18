@@ -1,4 +1,4 @@
-const API_BASE = 'http://localhost:8000/api';
+const API_BASE = 'https://stock-market-platform.onrender.com/api';
 
 // Navigation
 document.querySelectorAll('.nav-btn').forEach(btn => {
